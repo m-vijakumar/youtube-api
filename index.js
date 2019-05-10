@@ -22,9 +22,8 @@ app.get("/searchResults",(req,res)=>{
    var search= argv.q || req.query.search;
    var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=date&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
     request(url, (err, response, body) => {
-    if (err) { 
-        return console.log(err);
-     }
+    if (!err) {
+       
       result =JSON.parse(body);
      // let n=result.items.length();
      for(var i in result.items) {
@@ -33,13 +32,27 @@ app.get("/searchResults",(req,res)=>{
         ytvideoid.push(item.id.videoId);
         
       }
-      res.render("result",{
-         ytvideo1:ytvideoid[0],
-         ytvideo2:ytvideoid[1],
-         ytvideo3:ytvideoid[2],
-         ytvideo4:ytvideoid[3],
-         ytvideo5:ytvideoid[4]
+      if(ytvideoid[0] != null){
+         res.render("result",{
+            ytvideo1:ytvideoid[0],
+            ytvideo2:ytvideoid[1],
+            ytvideo3:ytvideoid[2],
+            ytvideo4:ytvideoid[3],
+            ytvideo5:ytvideoid[4]
+         })
+
+      }else{
+
+         res.render("index",{
+            message : "No Result Found....."
+         })
+      }
+      
+     }else{
+      res.render("index",{
+         message : "oops.... !  error."
       })
+     }
 })
 
 
