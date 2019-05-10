@@ -3,7 +3,7 @@ const app =express();
 const ejs=require("ejs")
 const request =require("request");
 const bodyparser =require("body-parser");
-const port = 5000||process.env.PORT;
+const port = process.env.PORT ||5000;
 var argv = require('yargs').argv;
 
 app.set("view engine","ejs");
