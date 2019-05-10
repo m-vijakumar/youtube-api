@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <center>
+                <h2>search in youtube</h2>
+    <form  method="GET" action="/searchResults" >    
+       <input  type="text" name="search" >
+        <input type="submit" value="Search">
+   
+    </form>
+</br></br></br></br>
+
+
+<iframe height="300" width="350" 
+src="//www.youtube.com/embed/<%= typeof ytvideo1 == 'undefined'?'': ytvideo1 %> " allowfullscreen></iframe>
+</br></br></br>
+<iframe height="300" width="350" 
+src="//www.youtube.com/embed/<%= typeof ytvideo2 == 'undefined'?'': ytvideo2 %>" allowfullscreen></iframe>
+
+</br></br></br>
+
+<iframe height="300" width="350" 
+src="//www.youtube.com/embed/<%= typeof ytvideo3 == 'undefined'?'': ytvideo3 %>" allowfullscreen></iframe>
+
+</br></br></br>
+
+<iframe height="300" width="350" 
+src="//www.youtube.com/embed/<%= typeof ytvideo4 == 'undefined'?'': ytvideo4 %>" allowfullscreen></iframe>
+
+</br></br></br>
+
+<iframe height="300" width="350" 
+src="//www.youtube.com/embed/<%= typeof ytvideo5 == 'undefined'?'': ytvideo5 %>" allowfullscreen></iframe>
+
+</center>
+</body>
+</html>
