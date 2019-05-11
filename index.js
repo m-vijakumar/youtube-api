@@ -61,6 +61,10 @@ app.get("/searchResults",(req,res)=>{
 ytvideoid=[];
 
 });
+<<<<<<< HEAD
 app.listen(port,console.log("server is running............."));
 
 module.exports = app;
+=======
+app.listen(port,console.log("server is running............."))
+>>>>>>> origin/master
