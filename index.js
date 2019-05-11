@@ -9,7 +9,8 @@ var argv = require('yargs').argv;
 app.set("view engine","ejs");
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
-
+const download =require("./routers/download");
+app.use("/download",download);
 
 app.get("/",(req,res)=>{
 
@@ -60,4 +61,6 @@ app.get("/searchResults",(req,res)=>{
 ytvideoid=[];
 
 });
-app.listen(port,console.log("server is running............."))
+app.listen(port,console.log("server is running............."));
+
+module.exports = app;
