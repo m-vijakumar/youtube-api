@@ -26,7 +26,8 @@ if (n !== -1) {
   ytdl(url, { filter: (format) => format.container === 'mp4' })
   .pipe(fs.createWriteStream('video.mp4'));
 
-  res.download(__dirname + "/../video.mp4");
+  res.render("downloader");
+  
 } else {
   res.render("error");
 }
@@ -34,7 +35,20 @@ if (n !== -1) {
     res.render("error");
 }
 });
-try{
+
+router.post("/yourvideo",(req,res)=>{
+
+    if (
+        
+        res.statusCode == 200 || res.statusCode == 302
+      ) {
+    res.download(__dirname + "/../video.mp4");
+
+      }else{
+          res.render("error");
+      }
+});
+
 function deleteFile(file) {
     fs.unlink(file, function(err) {
       if (err) {
@@ -45,8 +59,6 @@ function deleteFile(file) {
       }
     });
   }
-}catch(error){
-    res.render("error");
-}
+
 
 module.exports =router;

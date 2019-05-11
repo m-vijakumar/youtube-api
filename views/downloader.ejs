@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Download</title>
+  </head>
+  <style>
+    #download {
+      color: black;
+    }
+  </style>
+  <body>
+    
+    <div class="jumbotron">
+      <div class="alert alert-success" role="alert">
+        <h3>Your Download Will begin Shortly...</h3>
+      </div>
+      <br /><br />
+      <div class="container">
+        <form action="/download/yourvideo" method="POST">
+          <input
+            type="submit"
+            name="getV"
+            class="btn btn-success"
+            value="Download"
+            id="download"
+            onclick="timeLeft()"
+          />
+        </form>
+        <script>
+          var downloadButton = document.getElementById("download");
+          var counter = 30;
+          var newElement = document.createElement("p");
+          newElement.innerHTML = "You can download the file in 200 seconds.";
+          var id;
+
+          downloadButton.parentNode.replaceChild(newElement, downloadButton);
+
+          id = setInterval(function() {
+            counter--;
+            if (counter < 0) {
+              newElement.parentNode.replaceChild(downloadButton, newElement);
+              clearInterval(id);
+            } else {
+              newElement.innerHTML =
+                "You can download the file in " +
+                counter.toString() +
+                " seconds.";
+              newElement.className = "alert alert-success";
+              newElement.role = "alert";
+            }
+          }, 1000);
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
