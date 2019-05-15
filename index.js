@@ -21,7 +21,7 @@ app.get("/searchResults",(req,res)=>{
   // res.send( req.query.search);
    console.log(req.query.search);
    var search= argv.q || req.query.search;
-   var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=date&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
+   var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=date&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
     request(url, (err, response, body) => {
     if (!err) {
        
@@ -39,7 +39,12 @@ app.get("/searchResults",(req,res)=>{
             ytvideo2:ytvideoid[1],
             ytvideo3:ytvideoid[2],
             ytvideo4:ytvideoid[3],
-            ytvideo5:ytvideoid[4]
+            ytvideo5:ytvideoid[4],
+            ytvideo6:ytvideoid[5],
+            ytvideo7:ytvideoid[6],
+            ytvideo8:ytvideoid[7],
+            ytvideo9:ytvideoid[8],
+            ytvideo10:ytvideoid[9]
          })
 
       }else{
@@ -60,6 +65,11 @@ app.get("/searchResults",(req,res)=>{
 
 ytvideoid=[];
 
+});
+
+app.get("/searchurl",(req,res)=>{
+
+res.render("youtube-url");
 });
 app.listen(port,console.log("server is running............."));
 

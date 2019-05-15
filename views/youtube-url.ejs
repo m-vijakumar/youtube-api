@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+        <%- include navbar.ejs %>
+
         <style>
                 .inputtext{
             
@@ -19,24 +21,19 @@
                     border-radius: 50px ; 
                     width: fit-content
             
-                }
+                }   
                 </style>
-        <%- include navbar.ejs %>
         <center>
             </br>
-            <h1>search in youtube</h1>
-        </br>
-            <form  method="GET" action="/searchResults">
-       
-                <input class="inputtext" type="text" name="search" size="30"  placeholder="Search in Youtube">
-                <button class="btn btn-outline-primary " style="height: 26;" type="submit">Search</button>
-              </form>
-            </br></br>
-
- <p style="font-size: xx-large; font-style: Impact ;font-display: blod">  <%= typeof message == 'undefined' ? ' ' :message %></p>
-
-
+                <h1>search in youtube</h1>
+            </br>
+                <form  method="POST" action="/download">
+           
+                    <input class="inputtext" type="text" name="search_url" size="30"  placeholder="Search in Youtube">
+                    <button class="btn btn-outline-primary " style="height: 26;" type="submit">Download</button>
+                  </form>
+                </center>
     
-</center>
+</br></br>
 </body>
 </html>

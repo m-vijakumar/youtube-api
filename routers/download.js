@@ -17,8 +17,15 @@ const fs = require("fs");
 router.post("/",(req,res)=>{
 try{
 var videoid =req.body.vid
+var url;
 var file = fs.createWriteStream("video.mp4");
-const url = `https://www.youtube.com/watch?v=${videoid}`;
+if(videoid == undefined){
+
+  url = req.body.search_url;
+}else{
+  url = `https://www.youtube.com/watch?v=${videoid}`;
+}
+ 
 console.log(url);
 const n = url.search("youtube");
 if (n !== -1) {
