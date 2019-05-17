@@ -5,129 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
-</head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
 <body>
-        <%- include navbar.ejs %>
-        <style>
-                .inputtext{
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-size: auto" >
+        <a class="navbar-brand " href="#"><p style="color : #ff4d4d ;font-size: 30px ; font-style: Impact; font-display: bold" > YouTube Downloader &nbsp; &nbsp;&nbsp;&nbsp; </p></a>
+        <button class="navbar-toggler "  style=" background: transparent"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/"><font style="font-size: 21px">Home</font> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                    <a class="nav-link" href="/searchurl"><font style="font-size: 21px">Download_Url</font> <span class="sr-only">(current)</span></a>
+                  </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><font style="font-size: 21px">About</font></a>
+            </li>
             
-                    size: 100;
-                    border-radius: 5px;
-                    font-size: 18px ;
-                    padding: 5px;
-
-                    height :10000;
-                    border-radius: 50px ; 
-                    width: fit-content
-            
-                }
-                </style>
-        <center>
-            </br>
-                <h1>search in youtube</h1>
-            </br>
-                <form  method="GET" action="/searchResults">
-           
-                    <input class="inputtext" type="text" name="search" size="30"  placeholder="Search in Youtube">
-                    <button class="btn btn-outline-primary " style="height: 26;" type="submit">Search</button>
-                  </form>
-
-    
-</br></br>
-
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo1 == 'undefined'?'': ytvideo1 %> " allowfullscreen></iframe>
-
-<form method="post" action="/download/">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo1 == 'undefined'?'': ytvideo1 %>" />
-    <button class="btn btn-primary btn-sm" type="submit" >download</button>
-                 
-</form>
-</br>
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo2 == 'undefined'?'': ytvideo2 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo2 == 'undefined'?'': ytvideo2 %>">
-    <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo3 == 'undefined'?'': ytvideo3 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo3 == 'undefined'?'': ytvideo3 %>">
-    <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo4 == 'undefined'?'': ytvideo4 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download/">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo4 == 'undefined'?'': ytvideo4 %>">
-    <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo5 == 'undefined'?'': ytvideo5 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo5 == 'undefined'?'': ytvideo5 %>">
-      <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo6 == 'undefined'?'': ytvideo6 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo6 == 'undefined'?'': ytvideo6 %>">
-      <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo7 == 'undefined'?'': ytvideo7 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo7 == 'undefined'?'': ytvideo7 %>">
-      <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo8 == 'undefined'?'': ytvideo8 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo8 == 'undefined'?'': ytvideo8 %>">
-      <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo9 == 'undefined'?'': ytvideo9 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo9 == 'undefined'?'': ytvideo9 %>">
-      <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br>
-
-<iframe height="300" width="350" 
-src="//www.youtube.com/embed/<%= typeof ytvideo10 == 'undefined'?'': ytvideo10 %>" allowfullscreen></iframe>
-
-<form method="post" action="/download">
-    <input type="hidden" name="vid" value="<%= typeof ytvideo10 == 'undefined'?'': ytvideo10 %>">
-      <button class="btn btn-primary btn-sm" type="submit" >download</button>
-    </form>
-</br></br></br>
-
-
-</center>
+        
+          </ul>
+          
+        </div>
+      </nav>
 </body>
 </html>
