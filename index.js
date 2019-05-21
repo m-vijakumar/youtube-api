@@ -21,7 +21,7 @@ app.get("/searchResults",(req,res)=>{
   // res.send( req.query.search);
    console.log(req.query.search);
    var search= argv.q || req.query.search;
-   var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=date&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
+   var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
     request(url, (err, response, body) => {
     if (!err) {
        
@@ -71,6 +71,12 @@ app.get("/searchurl",(req,res)=>{
 
 res.render("youtube-url");
 });
+
+
+app.get("/about",(req,res)=>{
+
+   res.render("About");
+})
 app.listen(port,console.log("server is running............."));
 
 module.exports = app;
