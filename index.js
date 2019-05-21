@@ -21,7 +21,7 @@ app.get("/searchResults",(req,res)=>{
   // res.send( req.query.search);
    console.log(req.query.search);
    var search= argv.q || req.query.search;
-   var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=date&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
+   var url= `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${search}&type=video&key=AIzaSyB36DwgbKfup2GDxlDNdQBLAJmUFJXGQ7U`;
     request(url, (err, response, body) => {
     if (!err) {
        
